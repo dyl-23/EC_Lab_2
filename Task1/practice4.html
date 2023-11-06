@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <style>
+                table{
+                        border: 1px solid black;
+                        border-collapse: collapse;
+                        margin: 25px auto;
+                }
+                th, td{
+                        border: 1px solid black;
+                        text-align: center;
+                        padding: 5px
+                }
+        </style>
+</head>
+<body>
+        <form method="post">
+                Size of the multiplication table: <input type="text" name="size">
+                <input type="submit" value="Submit">
+        </form>
+        <br>
+        <?php
+        if($_SERVER["REQUEST_METHOD"]=="POST"){
+                $size= $_POST["size"];
+                function multiplicationtb($size){
+                        echo"<table>";
+                        echo"<tr><th></th>";
+                        for($i=1; $i<=$size; $i++){
+                                echo "<th>" . $i . "</th>";
+                        }
+                        echo"</tr>";
+                        for($i=1; $i<=$size; $i++){
+                                echo"<tr><th>" . $i . "</th>";
+                                for($j=1; $j<=$size; $j++){
+                                        echo"<td>" . $i*$j . "</td>";
+                                }
+                                echo "</tr>";
+                        }
+                        echo "</table>";
+                }
+                multiplicationtb($size);
+        }
+        ?>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+        <header>
+                <h1>EECS 348 Lab 7 Practice 3</h1>
+        </header>
+        <input type="text" id="p1" placeholder="First Password">
+        <input type="text" id="p2" placeholder="Second Password">
+        <button onclick="checkpass()">Validate Your Passwords,</button>
+        <script>
+                function checkpass(){
+                        const p1=document.getElementById("p1").value;
+                        const p2=document.getElementById("p2").value;
+                        if(p1.length<8){
+                                alert("The length of the first passwod is less than 8 letters!")
+                        }
+                        else if(p2.length<8){
+                                alert("The length of the second password is less than 8 letters!")
+                        }
+                        else if(p1!=p2){
+                                alert("Two passwords don't match")
+                        }
+                        else{
+                                alert("Everything is good!")
+                        }
+                }
+        </script>
+</body>
+</html>
